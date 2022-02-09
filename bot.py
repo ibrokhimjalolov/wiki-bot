@@ -10,6 +10,7 @@ dp = Dispatcher(bot)
 
 async def process_wiki_async(message: types.Message, del_message: types.Message):
     ans = wiki.searchWiki(message.text)
+    await asyncio.sleep(2)
     await del_message.delete()
     await asyncio.sleep(0.5)
     await message.reply(ans)
